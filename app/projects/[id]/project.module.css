@@ -103,6 +103,7 @@
   font-size: 1.25rem;
   line-height: 1.8;
   color: var(--color-text-light);
+  text-align: justify;
 }
 
 /* Gallery */

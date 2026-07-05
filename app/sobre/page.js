@@ -2,23 +2,21 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, Camera, Search, Compass, Lightbulb, Briefcase, Mail, MessageCircle, MoveLeft, MoveRight, MoveUp } from 'lucide-react';
 import styles from './sobre.module.css';
 
 export default function Sobre() {
   return (
     <main className={styles.main}>
-      {/* Header */}
-      <header className={styles.header}>
-        <div className={`container ${styles.nav}`}>
-          <div className={styles.logo}>
-            Thiago<span className={styles.lastName}> Henrique</span>
-          </div>
+      {/* Header Navigation */}
+      <nav className={styles.nav}>
+        <div className="container">
           <Link href="/" className={styles.backLink}>
-            <ArrowLeft size={20} /> Voltar ao Início
+            <ArrowLeft size={20} /> Voltar para Home
           </Link>
         </div>
-      </header>
+      </nav>
 
       {/* Hero Section */}
       <section className={styles.profileSection}>
@@ -29,7 +27,13 @@ export default function Sobre() {
             transition={{ duration: 0.6 }}
           >
             <div className={styles.imagePlaceholder}>
-              <Camera size={64} opacity={0.3} />
+              <Image 
+                src="/images/AboutPhoto.jpg"
+                alt="Thiago Henrique"
+                fill
+                style={{ objectFit: 'cover' }}
+                priority
+              />
             </div>
           </motion.div>
 
@@ -65,52 +69,40 @@ export default function Sobre() {
           >
             <h2 className={styles.sectionTitle}>Experiência</h2>
             
-            <div className={styles.snakeGrid}>
-              <div className={`${styles.snakeItem} ${styles.item1}`}>
-                <div className={styles.snakeDot}></div>
-                <h3 className={styles.snakeTitle}>Trilha Propaganda</h3>
-                <div className={styles.snakeRole}>Estrategista de Conteúdo</div>
-                <div className={styles.snakeDate}>Set/2025 — Presente</div>
+            <div className={styles.timelineRow}>
+              <div className={styles.timelineItem}>
+                <div className={styles.timelineDot}></div>
+                <h3 className={styles.timelineTitle}>Oficina Propaganda EJ</h3>
+                <div className={styles.timelineRole}>Social Media</div>
+                <div className={styles.timelineDate}>Jan/2020 — Mar/2021</div>
               </div>
 
-              <div className={`${styles.snakeItem} ${styles.item2}`}>
-                <div className={`${styles.arrowContainer} ${styles.arrowLeft}`}>
-                  <MoveLeft size={24} strokeWidth={1.5} />
-                </div>
-                <div className={styles.snakeDot}></div>
-                <h3 className={styles.snakeTitle}>Trilha Propaganda</h3>
-                <div className={styles.snakeRole}>Social Media</div>
-                <div className={styles.snakeDate}>Dez/2024 — Out/2025</div>
+              <div className={styles.timelineItem}>
+                <div className={styles.timelineDot}></div>
+                <h3 className={styles.timelineTitle}>Preventtiva</h3>
+                <div className={styles.timelineRole}>Assistente de Marketing Digital</div>
+                <div className={styles.timelineDate}>Set/2022 — Set/2023</div>
               </div>
 
-              <div className={`${styles.snakeItem} ${styles.item3}`}>
-                <div className={`${styles.arrowContainer} ${styles.arrowLeft}`}>
-                  <MoveLeft size={24} strokeWidth={1.5} />
-                </div>
-                <div className={styles.snakeDot}></div>
-                <h3 className={styles.snakeTitle}>Freelancer</h3>
-                <div className={styles.snakeRole}>Social Media Estrategista</div>
-                <div className={styles.snakeDate}>Jan/2022 — Presente</div>
+              <div className={styles.timelineItem}>
+                <div className={styles.timelineDot}></div>
+                <h3 className={styles.timelineTitle}>Freelancer</h3>
+                <div className={styles.timelineRole}>Social Media Estrategista</div>
+                <div className={styles.timelineDate}>Jan/2022 — Presente</div>
               </div>
 
-              <div className={`${styles.snakeItem} ${styles.item4}`}>
-                <div className={`${styles.arrowContainer} ${styles.arrowUp}`}>
-                  <MoveUp size={24} strokeWidth={1.5} />
-                </div>
-                <div className={styles.snakeDot}></div>
-                <h3 className={styles.snakeTitle}>Preventtiva</h3>
-                <div className={styles.snakeRole}>Assistente de Marketing Digital</div>
-                <div className={styles.snakeDate}>Set/2022 — Set/2023</div>
+              <div className={styles.timelineItem}>
+                <div className={styles.timelineDot}></div>
+                <h3 className={styles.timelineTitle}>Trilha Propaganda</h3>
+                <div className={styles.timelineRole}>Social Media</div>
+                <div className={styles.timelineDate}>Dez/2024 — Out/2025</div>
               </div>
 
-              <div className={`${styles.snakeItem} ${styles.item5}`}>
-                <div className={`${styles.arrowContainer} ${styles.arrowRight}`}>
-                  <MoveRight size={24} strokeWidth={1.5} />
-                </div>
-                <div className={styles.snakeDot}></div>
-                <h3 className={styles.snakeTitle}>Oficina Propaganda EJ</h3>
-                <div className={styles.snakeRole}>Social Media</div>
-                <div className={styles.snakeDate}>Jan/2020 — Mar/2021</div>
+              <div className={styles.timelineItem}>
+                <div className={styles.timelineDot}></div>
+                <h3 className={styles.timelineTitle}>Trilha Propaganda</h3>
+                <div className={styles.timelineRole}>Estrategista de Conteúdo</div>
+                <div className={styles.timelineDate}>Set/2025 — Presente</div>
               </div>
             </div>
           </motion.div>
@@ -123,12 +115,12 @@ export default function Sobre() {
           >
             <h2 className={styles.sectionTitle}>Formação</h2>
             
-            <div className={styles.snakeGrid}>
-              <div className={`${styles.snakeItem} ${styles.item1}`}>
-                <div className={styles.snakeDot}></div>
-                <h3 className={styles.snakeTitle}>Publicidade e Propaganda</h3>
-                <div className={styles.snakeRole}>UFS</div>
-                <div className={styles.snakeDate}>2019 — 2023</div>
+            <div className={styles.timelineRow}>
+              <div className={styles.timelineItem}>
+                <div className={styles.timelineDot}></div>
+                <h3 className={styles.timelineTitle}>Publicidade e Propaganda</h3>
+                <div className={styles.timelineRole}>UFS</div>
+                <div className={styles.timelineDate}>2019 — 2023</div>
               </div>
             </div>
           </motion.div>
@@ -170,14 +162,6 @@ export default function Sobre() {
                 </div>
                 <h3 className={styles.cardTitle}>Direcionamento Estratégico</h3>
                 <p className={styles.cardText}>Definição do caminho do mês: o que comunicar, como comunicar e por quê, alinhado aos objetivos do cliente.</p>
-              </div>
-
-              <div className={styles.bentoCard}>
-                <div className={styles.cardIcon}>
-                  <Lightbulb size={28} />
-                </div>
-                <h3 className={styles.cardTitle}>Projetos Especiais</h3>
-                <p className={styles.cardText}>Propostas de ações criativas com conceito, formato e objetivo definidos, entregues com briefing completo para a equipe de criação.</p>
               </div>
             </div>
           </motion.div>
