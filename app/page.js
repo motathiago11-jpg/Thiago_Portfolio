@@ -32,7 +32,7 @@ export default function Home() {
           </div>
           <ul className={styles.navLinks}>
             <li><Link href="#work">Projetos</Link></li>
-            <li><Link href="#about">Sobre</Link></li>
+            <li><Link href="/sobre">Sobre mim</Link></li>
           </ul>
         </div>
       </header>
@@ -90,9 +90,9 @@ export default function Home() {
               <button className={styles.primaryBtn} onClick={() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' })}>
                 Ver Trabalhos <ArrowRight size={20} />
               </button>
-              <a href="https://wa.me/5579991437315" target="_blank" rel="noopener noreferrer" className={styles.secondaryBtn}>
+              <Link href="/sobre#contato" className={styles.secondaryBtn}>
                 Entre em Contato
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
